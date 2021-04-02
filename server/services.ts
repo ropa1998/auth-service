@@ -17,7 +17,6 @@ export class UsersServer implements IUsersServer {
       (u) => u.email === email && u.password === password
     );
 
-    console.log("THE UsER IS", user)
     if (!user) {
       const error: ServiceError = {
         name: "Invalid credentials",
