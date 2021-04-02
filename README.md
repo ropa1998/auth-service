@@ -11,7 +11,7 @@ A very basic auth service with grpc and node
 2. `docker run -d auth-service`
 
 ## Build proto files
-The proto files are already generated, if users.proto is modifyed, this files need to be re generated usind de bash file in /proto or the command npm run build.
+The proto files are already generated, if users.proto is modifyed these files need to be re generated using de bash file in /proto or the command npm run build.
 If the bash file does not work you can run the command manually 
 1. `npx grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./proto --grpc_out=./proto -I ./proto proto/*.proto`
 2. `npx grpc_tools_node_protoc --ts_out=./proto -I ./proto proto/*.proto`
