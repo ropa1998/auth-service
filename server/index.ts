@@ -6,7 +6,7 @@ const server = new Server();
 server.addService(UsersService, new UsersServer());
 
 const port = 9090;
-const uri = `localhost:${port}`;
+const uri = `0.0.0.0:${port}`;
 console.log(`😀 Listening on ${uri}`);
 server.bind(uri, ServerCredentials.createInsecure());
 
