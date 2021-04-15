@@ -4,8 +4,8 @@ export class EtcdManager {
     private port: number;
     private name:string;
     private client:any;
-    private time_to_live = 10;
-    private etcd_host = '0.0.0.0:2379'
+    private time_to_live = 10; // in seconds
+    private etcd_host = ['http://127.0.0.1:2379', 'http://127.0.0.1:2389', 'http://127.0.0.1:2399']
     
     constructor(port: number, name: string){
         this.port = port;
@@ -21,8 +21,16 @@ export class EtcdManager {
           console.log('Trying to re-grant it...');
           this.grantLease();
         })
+
+        const key = `sevices/${this.name}`
+        const value = `0.0.0.0:${this.port}`
+
+        const keyBuff = Buffer.from(key, "utf-8");
+        const valueBuff = Buffer.from(value, "utf-8");
       
-        await lease.put(`sevices/${this.name}`).value(`${this.port}`);
+        console.log("Registering service...");
+        await lease.put(keyBuff).value(valueBuff);
+        console.log("Service registered");
       }
 
 }
