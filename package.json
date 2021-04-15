@@ -19,6 +19,7 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
+    "etcd3": "^1.1.0",
     "grpc": "^1.24.6"
   }
 }
