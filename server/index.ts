@@ -13,5 +13,5 @@ server.bind(uri, ServerCredentials.createInsecure());
 
 server.start();
 
-const manager = new EtcdManager(port, "auth")
-manager.grantLease();
+// const manager = new EtcdManager(port, "auth")
+// manager.grantLease();
