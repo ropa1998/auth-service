@@ -6,7 +6,7 @@ export class EtcdManager {
     private name: string;
     private client: any;
     private time_to_live = 10; // in seconds
-    private etcd_host = ['http://127.0.0.1:2379', 'http://127.0.0.1:2389', 'http://127.0.0.1:2399']
+    private etcd_host = ['my-etcd:2379', 'my-etcd:2389', 'my-etcd:2399']
     private uuid: string;
 
     constructor(port: number, name: string) {
